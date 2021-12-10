@@ -6,6 +6,11 @@ import PackageDescription
 let package = Package(
     name: "CompilerArgsParser",
     platforms: [.macOS(.v11)],
+    products: [
+        .library(
+              name: "CompilerArgsParser",
+              targets: ["CompilerArgsParser"]),
+    ],
     dependencies: [
         .package(name: "SwifterRe", url: "https://github.com/pol-piella/swifter-re.git", .exact("1.0.0"))
     ],
