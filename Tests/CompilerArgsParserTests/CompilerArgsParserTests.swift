@@ -2,9 +2,10 @@ import XCTest
 @testable import CompilerArgsParser
 
 final class CompilerArgsParserTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
+    func testArgumentsGetFormattedCorrectly() throws {
+        let modules = try! CompilerArgsParser.parseArguments(forProject: .init(path: "/Users/polpiella/Developer/swift-blogger/SwiftBlogger.xcworkspace", scheme: "SwiftBlogger", sdk: "macosx"))
+        let module = modules.first(where: { $0.name == "SwiftBlogger" })
+        let compilerArguments = module?.compilerArguments ?? []
+        print(compilerArguments)
     }
 }

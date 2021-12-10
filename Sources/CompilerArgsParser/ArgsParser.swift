@@ -14,6 +14,8 @@ enum Parser {
                 Component(
                     name: $0.groups.first!.value,
                     compilerArguments: $0.groups[1].value
+                        .replacingOccurrences(of: "=", with: " ")
+                        .replacingOccurrences(of: "\\", with: "")
                         .split(separator: " ")
                         .map { String($0) }
                 )
