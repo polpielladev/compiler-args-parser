@@ -14,8 +14,8 @@ enum Parser {
                 Component(
                     name: $0.groups.first!.value,
                     compilerArguments: $0.groups[1].value
-                        .split(separator: "-")
-                        .map { String($0).trimmingCharacters(in: .whitespaces) }
+                        .split(separator: " ")
+                        .map { String($0) }
                 )
             }
     }
