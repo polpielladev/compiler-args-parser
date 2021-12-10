@@ -1,9 +1,9 @@
 import Foundation
 import SwifterRe
 
-struct Component {
-    let name: String
-    let compilerArguments: [String]
+public struct Component {
+    public let name: String
+    public let compilerArguments: [String]
 }
 
 enum Parser {
